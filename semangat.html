@@ -2,11 +2,14 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> Mehwaa ❤️</title>
+
+<title>Semangat Sekolah Mehwaa ❤️</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -81,10 +84,12 @@ h1{
 }
 
 @keyframes fall{
+
     to{
         transform:translateY(110vh);
         opacity:0;
     }
+
 }
 
 @media(max-width:768px){
@@ -104,13 +109,16 @@ h1{
     #typing{
         font-size:16px;
     }
+
 }
+
 </style>
 </head>
 
 <body>
 
 <div class="wrap">
+
 <div class="card">
 
 <h1>
@@ -120,15 +128,18 @@ Mehwaa ❤️
 </h1>
 
 <div class="gallery">
-    <img src="foto1.jpg" alt="">
-    <img src="foto2.jpg" alt="">
-    <img src="foto3.jpg" alt="">
-    <img src="foto4.jpg" alt="">
+
+<img src="foto1.jpg" alt="Foto Mehwaa">
+<img src="foto2.jpg" alt="Foto Mehwaa">
+<img src="foto3.jpg" alt="Foto Mehwaa">
+<img src="foto4.jpg" alt="Foto Mehwaa">
+
 </div>
 
 <p id="typing"></p>
 
 </div>
+
 </div>
 
 <audio id="musik" loop>
@@ -139,7 +150,7 @@ Mehwaa ❤️
 
 const pesan=`📚 Semangat Sekolah, Mehwaa ❤️
 
-hai mehwaa.
+hai mehwaa...
 
 aku cuma mau kasih sedikit semangat buat kamu yang sekarang lagi menjalani hari-hari sekolah.
 
@@ -247,34 +258,54 @@ aku percaya kamu bisa. 🤍
 let i=0;
 
 function ketik(){
+
     if(i<pesan.length){
-        document.getElementById("typing").innerHTML+=pesan.charAt(i++);
+
+        document.getElementById("typing").innerHTML += pesan.charAt(i);
+
+        i++;
+
         setTimeout(ketik,30);
+
     }
+
 }
 
 ketik();
 
+
 const musik=document.getElementById("musik");
 
 if(localStorage.getItem("playMusic")){
-    musik.play().catch(()=>{});
+
+    musik.play().catch(()=>{
+
+        console.log("Browser memblokir autoplay musik.");
+
+    });
+
 }
+
 
 setInterval(()=>{
 
     const h=document.createElement("div");
 
     h.className="heart";
+
     h.innerHTML="❤️";
 
     h.style.left=Math.random()*100+"vw";
+
     h.style.fontSize=(20+Math.random()*20)+"px";
+
     h.style.animationDuration=(4+Math.random()*3)+"s";
 
     document.body.appendChild(h);
 
-    setTimeout(()=>h.remove(),7000);
+    setTimeout(()=>{
+        h.remove();
+    },7000);
 
 },350);
 
