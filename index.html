@@ -8,14 +8,19 @@
 <title>Semangat Sekolah Mehwaa ❤️</title>
 
 <style>
-body{
+*{
     margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
     font-family:Arial,sans-serif;
     background:linear-gradient(135deg,#ff7eb3,#ffc2d1);
     display:flex;
     justify-content:center;
     align-items:center;
-    height:100vh;
+    min-height:100vh;
     color:#fff;
     overflow:hidden;
 }
@@ -90,7 +95,11 @@ button:hover{
 
 <div class="card">
 
-    <h1>📚❤️<br>Semangat Sekolah<br>Mehwaa</h1>
+    <h1>
+        📚❤️<br>
+        Semangat Sekolah<br>
+        Mehwaa
+    </h1>
 
     <p>
         ada sedikit sesuatu buat kamu...<br>
@@ -109,9 +118,9 @@ button:hover{
 
 function go(){
 
-    localStorage.setItem('playMusic','yes');
+    localStorage.setItem("playMusic","yes");
 
-    location.href='semangat.html';
+    window.location.href = "semangat.html";
 }
 
 setInterval(()=>{
@@ -119,7 +128,7 @@ setInterval(()=>{
     const h=document.createElement("div");
 
     h.className="heart";
-    h.innerHTML=Math.random()>0.5?"❤️":"🌷";
+    h.innerHTML=Math.random()>0.5 ? "❤️" : "🌷";
 
     h.style.left=Math.random()*100+"vw";
     h.style.fontSize=(18+Math.random()*18)+"px";
